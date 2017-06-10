@@ -4,7 +4,7 @@ var canvasContext = function(canvas){
     var ctx = canvas.getContext("2d");
     
     (ctx.init = function() {
-	ctx.font = "18px ''";
+	ctx.font = "30px ''";
     })();
     ctx.rgb=function(r,g,b){
 	var s;
@@ -29,7 +29,7 @@ var canvasContext = function(canvas){
 	var ts;
 	ts = ctx.fillStyle;
 	ctx.setFill(s);
-	ctx.fillRect(0,0,400,300);
+	ctx.fillRect(0,0,canvas.width,canvas.height);
 	ctx.setFill(ts);
     }
     return ctx;
@@ -48,11 +48,11 @@ window.onload = function()
     function draw() {
 	g.clearCanvas(g.rgb(255,255,255));
 	g.setFill(g.rgb(0,0,0));
-	g.drawImage(img,0,Math.floor(20+Math.sin(i++*3.141592*2/15)%2*10));
+	g.drawImage(img,0,Math.floor(20+Math.sin(i++*3.141592*2/10)%2*10));
 
-	if(i < 50*60*5){//about 5 minutes.
-	    g.fillText("Brush your teeth while a few minutes.",20,20);
-	    setTimeout(draw,20);
+	if(i < 30*60*5){//about 5 minutes.
+	    g.fillText("Brush your teeth while a few minutes.",20,30);
+	    setTimeout(draw,1000/30);
 	}
 	else{
 	    g.fillText("OK.",20,20);
