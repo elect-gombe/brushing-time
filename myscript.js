@@ -41,7 +41,7 @@ window.onload = function()
     var i = 0;
     
     var img = new Image();
-    img.src = "http://illustimage.com/photo/dl/2633.png";
+    img.src = "brush.png";
     (function f() {
 	console.log(canvasContext);
     })();
